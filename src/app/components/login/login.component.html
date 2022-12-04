@@ -1,0 +1,18 @@
+<div class="container mt-3">
+  <form class="d-flex flex-column gap-3" [formGroup]="loginForm" (ngSubmit)="login()">
+    <h4 class="text-warning">Login</h4>
+    <label for="username">
+      <p>Username</p>
+      <input class="form-control" type="text" formControlName="username" #username required="required">
+    </label>
+    <label for="password">
+      <p>Password</p>
+      <input class="form-control" type="password" formControlName="password" #password required="required">
+    </label>
+    <small *ngIf="loginForm.status == 'INVALID'">(Rellenar todos los campos)</small>
+    <label>
+      <button type="submit" class="btn btn-primary w-100">Log in</button>
+    </label>
+  </form>
+  <h3>{{loginFallido}}</h3>
+</div>
